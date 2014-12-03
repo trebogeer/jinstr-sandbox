@@ -14,6 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Hello world!
+ * -Djava.library.path=lib/sigar -javaagent:/home/dimav/.m2/repository/com/github/jbellis/jamm/0.3.0/jamm-0.3.0.jar
  */
 public class App {
 
@@ -50,8 +51,9 @@ public class App {
         System.out.println("=======================================================================================");
 
         MemoryMeter mm = new MemoryMeter();
+        mm.enableDebug();
         System.out.println("Current thread child obj count               : " + mm.countChildren(Thread.currentThread()));
-        //  System.out.println("Current thread measure deep                  :" + mm.measureDeep(Thread.currentThread()));
+        System.out.println("Current thread measure deep                  : " + mm.measureDeep(Thread.currentThread()));
 
 
         System.out.println("=======================================================================================");
@@ -131,6 +133,7 @@ public class App {
             System.out.println(tIds[i] + " " + memAllocated[i]);
 
         System.out.println("=======================================================================================");
+        System.out.println("Current thread measure deep                  :" + mm.measureDeep(Thread.currentThread()));
         System.exit(0);
         // Instrumentation i =
     }
