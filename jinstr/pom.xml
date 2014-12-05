@@ -44,6 +44,11 @@
             <artifactId>jamm</artifactId>
             <version>0.3.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.caliper</groupId>
+            <artifactId>caliper</artifactId>
+            <version>1.0-beta-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <defaultGoal>install</defaultGoal>
@@ -56,7 +61,7 @@
                     <verbose>false</verbose>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.3.2</version>
@@ -69,16 +74,16 @@
                 </executions>
                 <configuration>
                     <mainClass>com.trebogeer.jinstr.App</mainClass>
-                    <!-- optional -->
-                    <!--<workingDirectory>${basedir}</workingDirectory>-->
-                  <!--  <systemProperties>
+                    &lt;!&ndash; optional &ndash;&gt;
+                    &lt;!&ndash;<workingDirectory>${basedir}</workingDirectory>&ndash;&gt;
+                  &lt;!&ndash;  <systemProperties>
                         <systemProperty>
                             <key>java.library.path</key>
                             <value>lib/sigar</value>
                         </systemProperty>
-                    </systemProperties>-->
+                    </systemProperties>&ndash;&gt;
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
